@@ -1,2 +1,2 @@
-# maxheap
-A maxheap implementation with explanation.
+
+# Algorithm

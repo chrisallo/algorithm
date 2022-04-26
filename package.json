@@ -1,20 +1,20 @@
 {
-  "name": "maxheap",
+  "name": "algorithm",
   "version": "1.0.0",
-  "description": "A maxheap implementation with explanation.",
+  "description": "Algorithm implementations.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chrisallo/maxheap.git"
+    "url": "git+https://github.com/chrisallo/algorithm.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chrisallo/maxheap/issues"
+    "url": "https://github.com/chrisallo/algorithm/issues"
   },
-  "homepage": "https://github.com/chrisallo/maxheap#readme"
+  "homepage": "https://github.com/chrisallo/algorithm#readme"
 }
