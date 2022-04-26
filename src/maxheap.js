@@ -38,4 +38,7 @@ export default class MaxHeap {
     }
     return null;
   }
+  clear() {
+    this.heap = [null];
+  }
 }
