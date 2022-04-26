@@ -1,7 +1,8 @@
 
 export default class MaxHeap {
-  constructor() {
+  constructor(args = {}) {
     this.heap = [null];
+    this.compare = args.compare ?? ((a, b) => a - b);
   }
   peek() {
     return this.heap[1] ?? null;
@@ -10,10 +11,10 @@ export default class MaxHeap {
     this.heap.push(value);
     let curr = this.heap.length - 1;
     while (curr > 1) {
-      const next = Math.floor(curr / 2);
-      if (this.heap[curr] < this.heap[next]) {
-        [this.heap[curr], this.heap[next]] = [this.heap[next], this.heap[curr]];
-        curr = next;
+      const parent = Math.floor(curr / 2);
+      if (this.compare(this.heap[curr], this.heap[parent]) > 0) {
+        [this.heap[curr], this.heap[parent]] = [this.heap[parent], this.heap[curr]];
+        curr = parent;
       } else break;
     }
   }
@@ -27,14 +28,10 @@ export default class MaxHeap {
       while (curr < this.heap.length) {
         const left = curr * 2;
         const right = curr * 2 + 1;
-        if (this.heap[curr] > this.heap[left] || this.heap[curr] > this.heap[right]) {
-          if (left > right) {
-            [this.heap[curr], this.heap[right]] = [this.heap[right], this.heap[curr]];
-            curr = right;
-          } else {
-            [this.heap[curr], this.heap[left]] = [this.heap[left], this.heap[curr]];
-            curr = left;
-          }
+        if (this.compare(this.heap[curr], this.heap[left]) < 0 || this.compare(this.heap[curr], this.heap[right]) < 0) {
+          const swap = this.compare(this.heap[left], this.heap[right]) > 0 ? left : right;
+          [this.heap[curr], this.heap[swap]] = [this.heap[swap], this.heap[curr]];
+          curr = swap;
         } else break;
       }
       return value;
