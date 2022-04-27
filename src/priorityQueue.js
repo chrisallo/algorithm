@@ -16,8 +16,8 @@ export default class PriorityQueue {
     this.maxheap.push({ item, priority });
   }
   dequeue() {
-    const { item } = this.maxheap.pop();
-    return item;
+    const node = this.maxheap.pop();
+    return node ? node.item : null;
   }
   clear() {
     this.maxheap.clear();
