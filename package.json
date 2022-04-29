@@ -1,22 +1,22 @@
 {
-  "name": "algorithm",
+  "name": "levelup",
   "version": "1.0.0",
-  "description": "Algorithm implementations.",
+  "description": "A set of codes that implements common data structures and algorithms in JavaScript.",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chrisallo/algorithm.git"
+    "url": "git+https://github.com/chrisallo/levelup.git"
   },
   "keywords": [],
   "author": "chrisallo",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chrisallo/algorithm/issues"
+    "url": "https://github.com/chrisallo/levelup/issues"
   },
-  "homepage": "https://github.com/chrisallo/algorithm#readme",
+  "homepage": "https://github.com/chrisallo/levelup#readme",
   "devDependencies": {
     "@babel/core": "^7.17.9",
     "@babel/plugin-transform-runtime": "^7.17.0",
