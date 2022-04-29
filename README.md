@@ -8,6 +8,8 @@
 | Name | Description |
 | - | - |
 | `LinkedList` | One-way linked list |
+| `Stack` | FILO |
+| `Queue` | FIFO |
 | `MaxHeap` | Max heap |
 | `PriorityQueue` | Priority queue |
 
