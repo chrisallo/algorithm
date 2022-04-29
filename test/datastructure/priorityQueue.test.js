@@ -1,5 +1,5 @@
 
-import PriorityQueue from '../src/priorityQueue';
+import PriorityQueue from '../../src/datastructure/priorityQueue';
 
 describe('priorityQueue', () => {
   test('new', () => {
@@ -19,7 +19,7 @@ describe('priorityQueue', () => {
       { item: 6, priority: 3 },
     ]);
   });
-  test('dequeue()', () => {
+  test('enqueue() > dequeue()', () => {
     const list = [10,5,3,8,14,22];
     const queue = new PriorityQueue();
     list.forEach(n => queue.enqueue(n * 2, n));
@@ -33,5 +33,19 @@ describe('priorityQueue', () => {
       { item: 10, priority: 5 },
       { item: 6, priority: 3 },
     ]);
+  });
+  test('enqueue() > dequeue() overflow', () => {
+    const list = [10,5];
+    const queue = new PriorityQueue();
+    list.forEach(n => queue.enqueue(n * 2, n));
+
+    expect(queue.dequeue()).toBe(20);
+    expect(queue.dequeue()).toBe(10);
+    expect(queue.dequeue()).toBeNull();
+  });
+  test('dequeue() empty', () => {
+    const queue = new PriorityQueue();
+    expect(queue.dequeue()).toBeNull();
+    expect(queue.dequeue()).toBeNull();
   });
 });
