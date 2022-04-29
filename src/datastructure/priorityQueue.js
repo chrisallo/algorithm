@@ -2,10 +2,10 @@
 import MaxHeap from './maxheap';
 
 export default class PriorityQueue {
-  maxheap;
+  _maxheap;
   
   constructor() {
-    this.maxheap = new MaxHeap({
+    this._maxheap = new MaxHeap({
       compare: (a, b) => {
         if (a && b) return a.priority - b.priority;
         else if (a) return 1;
@@ -15,13 +15,13 @@ export default class PriorityQueue {
     });
   }
   enqueue(item, priority) {
-    this.maxheap.push({ item, priority });
+    this._maxheap.push({ item, priority });
   }
   dequeue() {
-    const node = this.maxheap.pop();
+    const node = this._maxheap.pop();
     return node ? node.item : null;
   }
   clear() {
-    this.maxheap.clear();
+    this._maxheap.clear();
   }
 }

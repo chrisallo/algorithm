@@ -3,7 +3,8 @@ import LinkedList from '../../src/datastructure/linkedList';
 
 describe('linkedList', () => {
   test('new', () => {
-    new LinkedList();
+    const list = new LinkedList();
+    expect(list.toArray()).toStrictEqual([]);
   });
   test('add()', () => {
     const list = new LinkedList();
@@ -43,9 +44,9 @@ describe('linkedList', () => {
     list.add(20);
     list.add(30);
     list.add(40);
-    expect(list.remove(10)).toBeFalsy();
-    expect(list.remove(list.length - 1)).toBeTruthy();
-    expect(list.remove(0)).toBeTruthy();
+    expect(list.remove(10)).toBeNull();
+    expect(list.remove(list.length - 1)).toBe(40);
+    expect(list.remove(0)).toBe(10);
     expect(list.get(0)).toBe(20);
     expect(list.get(1)).toBe(30);
     expect(list.get(2)).toBeNull();
