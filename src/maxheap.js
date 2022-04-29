@@ -1,5 +1,8 @@
 
 export default class MaxHeap {
+  heap;
+  compare;
+
   constructor(args = {}) {
     this.heap = [null];
     this.compare = args.compare ?? ((a, b) => a - b);

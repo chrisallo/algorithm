@@ -2,6 +2,8 @@
 import MaxHeap from './maxheap';
 
 export default class PriorityQueue {
+  maxheap;
+  
   constructor() {
     this.maxheap = new MaxHeap({
       compare: (a, b) => {
